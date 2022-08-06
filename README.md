@@ -4,13 +4,13 @@ TBD - SUMMARY
 
 ## Tech Usage
 
-**CSS Framework:** Bootstrap
+**CSS Framework:** TBD
 
-**Stack:** MongoDB, Express, NodeJS
+**Stack:** TBD
 
-**Server-Side Rendering:** JSX
+**Server-Side Rendering:** TBD
 
-**Node Modules**: method-override, dotenv, express-react-views
+**Node Modules**: TBD
 
 ## Routes
 
