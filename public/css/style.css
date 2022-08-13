@@ -1,21 +1,127 @@
 h1 {
-    text-align: center;
-    color: cornflowerblue;
-  }
-  button{
-    display: flex;
-    background-color: cornflowerblue;
-    color: white;
-    justify-content: center;
-   align-items: center;
-   
-  }
-  div{
-    text-align: center;
-  }
-  img {
+  text-align: center;
+  color: #ff6c2c;
+  margin-top: 15px;
+}
+button {
+  font-size: 1.25em;
+  font-weight: 500;
+  padding: 10px;
+  background-color: #ff6c2c;
+  color: white;
+  border-color: black;
+  border-radius: 8px;
 
-    width: 400px;
-    height: auto;
-    margin: 20px;
-  }
+}
+button:hover {
+  background-color: white;
+  color: #ff6c2c;
+}
+
+div, p {
+  text-align: center;
+}
+
+img {
+  width: 300px;
+  height: 225px;
+  margin: 20px;
+  border-radius: 15px;
+}
+
+nav {
+  background-color: #ff6c2c;
+  padding: 10px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 25px;
+}
+
+nav a {
+  color: white;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ff6c2c;
+  text-decoration: none;
+  background-color: white;
+}
+
+body {
+  background-color: lightgray;
+  text-align: center;
+}
+
+main {
+  text-align: center;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 0px;
+  background-color: white;
+}
+form {
+  padding: 20px;
+  border-radius: 10px;
+}
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+input{
+  margin-bottom: 15px;
+}
+input.form-control{
+  background-color: whitesmoke;
+  border-color: #ff6c2c;
+} 
+input[type=submit]{
+  background-color:#ff6c2c;
+  width: 200px;
+  padding:10px;
+  font-weight: 600;
+  border-color: black;
+}
+div.detailpic{
+  display: inline-flex;
+  width: 40%;
+}
+div.info{
+  display: inline-block;
+  width: 40%;
+}
+div.rants{
+  margin-top: 25px;
+  display: inline-block;
+}
+#editSec{
+  display: inline-flex;
+  align-items: baseline;
+  vertical-align: bottom;
+
+}
+#delBtn {
+  background-color: red;
+  width: 100px;
+  padding: 5px;
+ 
+}
+#editBtn{
+  background-color: cornflowerblue;
+  width: 100px;
+  vertical-align: top;
+  padding: 5px;
+  font-weight: 600;
+}
+#addBtn, #placeBtn, #saveBtn {
+  margin-bottom: 20px;
+}
