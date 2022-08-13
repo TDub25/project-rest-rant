@@ -1,31 +1,23 @@
 const express= require('express')
+const bodyParser= require('body-parser')
+
 const app = express()
-
-
-//environment variables
 require('dotenv').config()
+const methodOverride= require('method-override')
 
-app.use('/places',require('./controllers/places'))
-
-//middleware set views engine
-app.set('views',_dirname + '/views')
+//middleware
+app.set("views", __dirname + "/views");
 app.set('view engine','jsx')
-app.engine('jsx',require('express-react-views').createEngine())
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
-
+app.use(methodOverride('_method'))
+app.use('/places',require('./controllers/places'))
 app.get('/',(req,res)=>{
     res.render('home')
-})
-app.get('/places', (req,res)=>{
-    res.render('places/index')
 })
 
 app.get('*',(req,res)=>{
     res.render('error404')
-
 })
-
-app.use(express.urlencoded({ extended: true }))
 
 app.listen(process.env.PORT)
