@@ -1,24 +1,27 @@
-const express= require('express')
-const bodyParser= require('body-parser')
-
-const app = express()
 require('dotenv').config()
-const methodOverride= require('method-override')
+const express = require('express')
+const app = express()
+const methodOverride = require('method-override')
+const bodyParser = require('body-parser')
 
-//middleware
-app.set("views", __dirname + "/views");
-app.set('view engine','jsx')
+//Express Settings
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.static('public'))
-app.use(express.urlencoded({extended: true}))
-app.use(methodOverride('_method'))
-app.use('/places',require('./controllers/places'))
+app.use(express.urlencoded({ extended: true }))
 
-app.get('/',(req,res)=>{
+//Controllers Route 
+app.use('/places', require('./controllers/places'))
+
+//Homepage Route
+app.get('/', (req, res) =>{
     res.render('home')
 })
 
-app.get('*',(req,res)=>{
-    res.render('error404')
+//Wildcard Route
+app.get('*', (req,res) =>{
+    res.status(404).render('error404')
 })
 
 app.listen(process.env.PORT)
