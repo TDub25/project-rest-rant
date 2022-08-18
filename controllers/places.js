@@ -3,7 +3,7 @@ const e = require('express')
 const places = require('../models/places.js')
 const db = require('../models')
 
-//Commented out lines 6 through 70 in case new code is inoperable
+//Commented out lines 6 through 71 in case new code is inoperable
 /* router.get('/',(req,res)=>{
   res.render('places/index',{places})
 }) 
@@ -96,7 +96,14 @@ router.get('/new', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-  res.send('GET /places/:id stub')
+  db.Place.findById(req.params.id)
+  .then(place => {
+      res.render('places/show', { place })
+  })
+  .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+  })
 })
 
 router.put('/:id', (req, res) => {
