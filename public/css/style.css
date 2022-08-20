@@ -84,7 +84,7 @@ input.form-control{
   background-color: whitesmoke;
   border-color: #ff6c2c;
 } 
-input[type=submit]{
+input[type=submit] {
   background-color:#ff6c2c;
   width: 200px;
   padding:10px;
@@ -104,23 +104,29 @@ div.rants{
   display: inline-block;
 }
 #editSec{
-  display: inline-flex;
-  align-items: baseline;
-  vertical-align: bottom;
-
+  display:inline-block;
+  max-height: 50px;
+ 
 }
 #delBtn {
+  display: block;
   background-color: red;
   width: 100px;
   padding: 5px;
- 
+  margin: auto;
+    
 }
 #editBtn{
-  background-color: cornflowerblue;
+  display: block;
+  background-color: #ff6c2c;
+  border-color: black;
+  color: white;
   width: 100px;
-  vertical-align: top;
   padding: 5px;
+  max-height: 40px;
   font-weight: 600;
+  margin: auto;
+
 }
 #addBtn, #placeBtn, #saveBtn {
   margin-bottom: 20px;
