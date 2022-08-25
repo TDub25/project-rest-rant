@@ -17,11 +17,9 @@ router.post('/', (req, res) => {
     res.redirect('/places')
 })
 
-
 router.get('/', (req, res) => {
     res.render('places/index', { places })
 })
-
 
 router.get('/new', (req, res) => {
     res.render('places/new')
@@ -36,6 +34,16 @@ router.get('/:id', (req, res) => {
     } else {
         res.render('places/show', { place: places[id], id })
     }
+})
+
+router.get('/:id/edit', (req, res) => {
+    db.Place.findById(req.params.id)
+    .then(place => {
+        res.render('places/edit', { place })
+    })
+    .catch(err => {
+        res.render('error404')
+    })
 })
 
 router.post('/:id/comment', (req, res) => {
@@ -59,17 +67,15 @@ router.post('/:id/comment', (req, res) => {
   })
 })
 
-
-router.delete('/places/:id', (req, res) => {
-    let id = Number(req.params.id)
-    if (isNaN(id)) {
-        res.render('error404')
-    } else if (!places[id]) {
-        res.render('error404')
-    } else {
-        places.splice(i, 1)
+router.delete('/:id', (req, res) => {
+    db.Place.findByIdAndDelete(req.params.id)
+    .then(place => {
         res.redirect('/places')
-    }
+    })
+    .catch(err => {
+        console.log('err', err)
+        res.render('error404')
+    })
 })
 
 module.exports = router
@@ -123,7 +129,6 @@ else {
   res.render('places/edit', { place: places[id], id })
 }
 })
-
 //Delete
 router.delete('/:id', (req, res) => {
 let id = Number(req.params.id)
@@ -138,5 +143,4 @@ else {
   res.redirect('/places')
 }
 })
-
 module.exports = router */
