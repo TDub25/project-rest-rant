@@ -94,6 +94,7 @@ input[type=submit] {
 div.detailpic{
   display: inline-flex;
   width: 40%;
+  align-items: center;
 }
 div.info{
   display: inline-block;
