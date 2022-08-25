@@ -173,7 +173,7 @@ function show(data){
                   Rating
                 </h2>
                 {rating}
-                {/* <p>No Ratings Available</p> */}
+                {<p>No Ratings Available</p>}
                 <h2>Description</h2>
                 <p>{data.place.showEstablished()}</p>
                 <p>Serving {data.place.cuisines}</p>
